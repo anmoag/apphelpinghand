@@ -1,4 +1,4 @@
-package models;
+package com.inserta.apphelpinghand.models;
 
 
 import jakarta.persistence.*;

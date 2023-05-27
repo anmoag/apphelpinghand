@@ -1,3 +1,4 @@
+
 -- Borrar la base de datos si existe
 DROP DATABASE IF EXISTS appHelping;
 
@@ -66,10 +67,10 @@ CREATE TABLE puntuaciones (
 );
 
 CREATE TABLE incidencias (
-                             id INT PRIMARY KEY AUTO_INCREMENT,
+                             id BIGINT PRIMARY KEY AUTO_INCREMENT,
                              descripcion VARCHAR(255) NOT NULL,
                              fecha_hora DATETIME NOT NULL,
-                             usuario_id INT,
+                             usuario_id BIGINT,
                              estado VARCHAR(20),
                              prioridad VARCHAR(20),
                              comentarios TEXT,

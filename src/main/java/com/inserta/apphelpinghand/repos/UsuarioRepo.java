@@ -14,11 +14,17 @@ import java.util.List;
 public interface UsuarioRepo extends JpaRepository<Usuario, Long> {
 
     public List<Usuario> findByEmail(String email);
-    public  List<Usuario> findByNombre(String nombre);
+
+    public List<Usuario> findByNombre(String nombre);
+
     public Usuario findByEmailAndPass(String email, String pass);
+
     public boolean existsByEmailAndPass(String email, String pass);
+
     public List<Usuario> findByUsuarioDesde(LocalDateTime usuarioDesde);
-    public List<Usuario> findByLongitudAndLatitud(Double longitud, Double latitud);
+
+    public List<Usuario> findByLongitudAndLatitud(Double longitud, Double latitud, Double distancia);
+
     public Usuario findById(int id);
 
 }

@@ -73,7 +73,8 @@ CREATE TABLE incidencias (
                              usuario_id BIGINT,
                              estado VARCHAR(20),
                              prioridad VARCHAR(20),
-                             comentarios TINYTEXT,
+                             comentarios TEXT,-- Algunos han tenido que poner un TINYTEXT
+
                              FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 

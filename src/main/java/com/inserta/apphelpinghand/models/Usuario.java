@@ -18,15 +18,13 @@ public class Usuario {
     private long id;
     @Column(nullable = false)
     private int idTipo;
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
     private String foto;
     private double latitud;
-    @Column(nullable = false)
     private double longitud;
     private String pass;
     private LocalDateTime fechaNacimiento;
-    @Column(nullable = false)
     private LocalDateTime usuarioDesde;
     private String token;
     private String sexo;

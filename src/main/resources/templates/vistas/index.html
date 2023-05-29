@@ -3,7 +3,7 @@
   Fecha   : 21/05/2023 - 11:56
 -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>appHelping</title>
@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<h1 class="display-1 text-center">HelpinHand</h1>
-
+    <header th:replace="fragments/fragmentos :: cabecera"></header>
+    <nav th:replace="fragments/fragmentos :: navegador"></nav>
+    <footer th:replace="fragments/fragmentos :: pie"></footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

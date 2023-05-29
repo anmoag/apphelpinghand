@@ -5,16 +5,15 @@ import com.inserta.apphelpinghand.models.Usuario;
 import com.inserta.apphelpinghand.repos.MensajeRepo;
 import com.inserta.apphelpinghand.repos.UsuarioRepo;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class MensajeServiceImpl implements MensajeService {
     private final MensajeRepo mensajeRepo;
     private final UsuarioRepo usuarioRepo;
     private static final double RADIO_DE_LA_TIERRA = 6371; // Radio de la Tierra en kilómetros
-    Usuario acosado;
     private static final double RANGO_DE_INFLUENCIA = 300;
 
     public MensajeServiceImpl(MensajeRepo messageRepo, UsuarioRepo usuarioRepo) {
@@ -30,15 +29,14 @@ public class MensajeServiceImpl implements MensajeService {
         mensaje.setContenido("Necesito ayuda");
         mensaje.setRemitente(usuarioAcosado);
         mensaje.setFechaEnvio(LocalDateTime.now()); // Dar formato a la fecha y hora
-        acosado.setFoto(""); // Aquí la url de la foto del usuario
+        usuarioAcosado.setFoto(""); // Aquí la url de la foto del usuario
         mensaje.setLeido(false);
 
         // Enviar mensaje a usuarios cercanos
         for (Usuario usuario : this.obtenerUsuariosCercanos(usuarioAcosado, RANGO_DE_INFLUENCIA)) {
-            mensaje.setDestinatario(usuario); //Preguntar a Salva
+            mensaje.setDestinatario(usuario);
             mensajeRepo.save(mensaje);
         }
-
         return mensaje;
 
     }

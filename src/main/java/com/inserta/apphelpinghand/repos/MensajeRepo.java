@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RepositoryRestResource(path = "mensajes")
 public interface MensajeRepo extends JpaRepository<Mensaje, Long> {
+
+
+
 }

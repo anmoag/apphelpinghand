@@ -1,0 +1,18 @@
+
+INSERT INTO palabras (palabra) VALUES ('gilipollas'),
+                                      ('imbécil'),
+                                      ('cabrón'),
+                                      ('cabrona'),
+                                      ('Subnormal'),
+                                      ('hijoputa'),
+                                      ('hijaputa'),
+                                      ('hijo de puta'),
+                                      ('hija de puta'),
+                                      ('tonto'),
+                                      ('tonta'),
+                                      ('puta'),
+                                      ('puto'),
+                                      ('capullo'),
+                                      ('capulla'),
+                                      ('payaso'),
+                                      ('payasa');

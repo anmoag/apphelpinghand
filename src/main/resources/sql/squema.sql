@@ -73,7 +73,7 @@ CREATE TABLE incidencias (
                              usuario_id BIGINT,
                              estado VARCHAR(20),
                              prioridad VARCHAR(20),
-                             comentarios TEXT,-- Algunos han tenido que poner un TINYTEXT
+                             comentarios TINYTEXT,
 
                              FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
@@ -90,20 +90,3 @@ CREATE TABLE palabras (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           palabra VARCHAR(255)
 );
-INSERT INTO palabras (palabra) VALUES ('gilipollas');
-INSERT INTO palabras (palabra) VALUES ('imbécil');
-INSERT INTO palabras (palabra) VALUES ('cabrón');
-INSERT INTO palabras (palabra) VALUES ('cabrona');
-INSERT INTO palabras (palabra) VALUES ('Subnormal');
-INSERT INTO palabras (palabra) VALUES ('hijoputa');
-INSERT INTO palabras (palabra) VALUES ('hijaputa');
-INSERT INTO palabras (palabra) VALUES ('hijo de puta');
-INSERT INTO palabras (palabra) VALUES ('hija de puta');
-INSERT INTO palabras (palabra) VALUES ('tonto');
-INSERT INTO palabras (palabra) VALUES ('tonta');
-INSERT INTO palabras (palabra) VALUES ('puta');
-INSERT INTO palabras (palabra) VALUES ('puto');
-INSERT INTO palabras (palabra) VALUES ('capullo');
-INSERT INTO palabras (palabra) VALUES ('capulla');
-INSERT INTO palabras (palabra) VALUES ('payaso');
-INSERT INTO palabras (palabra) VALUES ('payasa');

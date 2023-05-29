@@ -16,7 +16,6 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(nullable = false)
     private int idTipo;
     @Column(unique = true)
     private String email;

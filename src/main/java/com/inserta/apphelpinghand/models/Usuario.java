@@ -16,26 +16,16 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     @Column(nullable = false)
     private int idTipo;
-
     @Column(nullable = false, unique = true)
     private String email;
-
     private String foto;
-
-    @Column(nullable = false)
     private double latitud;
-
     @Column(nullable = false)
     private double longitud;
-
-    @Column(nullable = false)
     private String pass;
-
     private LocalDateTime fechaNacimiento;
-
     @Column(nullable = false)
     private LocalDateTime usuarioDesde;
     private String token;

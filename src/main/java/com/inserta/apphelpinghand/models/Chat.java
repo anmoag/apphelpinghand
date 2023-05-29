@@ -16,11 +16,11 @@ public class Chat {
     private long id;
     @ManyToOne
     @JoinColumn(name = "remitente_id") //Especifica la columna en la tabla mensajes que se utiliza
-    // para almacenar la clave externa del remitente. El atributo nullable = false dice que el remitente no puede ser nulo
+    // para almacenar la clave externa del remitente.
     private Usuario remitente;
     @ManyToOne
     @JoinColumn(name = "destinatario_id") //Especifica la columna en la tabla mensajes que se utiliza
-    // para almacenar la clave externa del destinatario. El atributo nullable = false dice que el destinatario no puede ser nulo
+    // para almacenar la clave externa del destinatario.
     private Usuario destinatario;
     private String contenido;
     private LocalDateTime fechaEnvio;

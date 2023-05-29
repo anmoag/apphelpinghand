@@ -19,12 +19,12 @@ public class Mensaje {
     @ManyToOne(fetch = FetchType.LAZY) // Establece una relación entre Mensaje y Usuario.
     // Cada mensaje tiene un remitente y un destinatario que son instancias de la clase Usuario.
     @JoinColumn(name = "remite_id") //Especifica la columna en la tabla mensajes que se utiliza
-    // para almacenar la clave externa del remitente. El atributo nullable = false dice que el remitente no puede ser nulo
+    // para almacenar la clave externa del remitente.
     private Usuario remitente;
     @ManyToOne(fetch = FetchType.LAZY) // Establece una relación entre Mensaje y Usuario.
     // Cada mensaje tiene un remitente y un destinatario que son instancias de la clase Usuario.
     @JoinColumn(name = "destinatario_id") //Especifica la columna en la tabla mensajes que se utiliza
-    // para almacenar la clave externa del destinatario. El atributo nullable = false dice que el destinatario no puede ser nulo
+    // para almacenar la clave externa del destinatario.
     private Usuario destinatario;
     private LocalDateTime fechaEnvio;
     private boolean leido;

@@ -22,6 +22,6 @@ public class Incidencia {
     private Usuario usuario;
     private String estado;
     private String prioridad;
-    @Lob // Objetos de gan tamaño
+    @Lob // Objetos de gran tamaño
     private String comentarios;
 }

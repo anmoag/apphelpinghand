@@ -16,7 +16,7 @@ public class HistorialAccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne(fetch = FetchType.LAZY) //relación de muchos a uno
-    @JoinColumn(name = "usuario_id", nullable = false) //relación entre Incidencia y Usuario
+    @JoinColumn(name = "usuario_id") //relación entre Incidencia y Usuario
     private Usuario usuario;
     private String accion;
     private LocalDateTime fecha;

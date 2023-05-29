@@ -38,35 +38,17 @@ public class Usuario {
 
     @Column(nullable = false)
     private LocalDateTime usuarioDesde;
-
     private String token;
-
     private String sexo;
-
-    @Column(nullable = false)
     private String nombre;
-
     private String apellido1;
-
     private String apellido2;
-
     private String curso;
-
-    @Column(nullable = false)
     private String direccion;
-
-    @Column(nullable = false)
     private String ciudad;
-
-    @Column(nullable = false)
     private int codigoPostal;
-
-    @Column(nullable = false)
     private String pais;
-
-    @Column(nullable = false)
     private String telefono;
-
     private boolean logueado;
 
 

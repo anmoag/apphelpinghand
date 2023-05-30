@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "chat_mensajes")
 public class Chat {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

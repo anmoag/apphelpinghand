@@ -10,9 +10,9 @@ public interface UsuarioService {
 
     public List<Usuario> obtenerPorNombre(String nombre);
 
-    public Usuario obtenerPorEmailAndPass(String email, String pass);
+    public Usuario obtenerPorEmailYClave(String email, String pass);
 
-    public boolean existeEmailAndPass(String email, String pass);
+    public boolean existeEmailYClave(String email, String pass);
 
     public List<Usuario> obtenerUsuarioDesde(LocalDateTime usuarioDesde);
 }

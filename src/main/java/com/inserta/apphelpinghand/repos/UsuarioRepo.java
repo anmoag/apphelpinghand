@@ -21,7 +21,7 @@ public interface UsuarioRepo extends JpaRepository<Usuario, Long> {
 
     public boolean existsByEmailAndPass(String email, String pass);
 
-    public List<Usuario> findByUsuarioDesdeBefore(LocalDateTime usuarioDesde);
+    public List<Usuario> findByUsuarioBefore(LocalDateTime usuarioDesde);
 
 
 }

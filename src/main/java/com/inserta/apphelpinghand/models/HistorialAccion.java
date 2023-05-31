@@ -15,15 +15,10 @@ public class HistorialAccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     @ManyToOne(fetch = FetchType.LAZY) //relación de muchos a uno
-    @JoinColumn(name = "usuario_id", nullable = false) //relación entre Incidencia y Usuario
+    @JoinColumn(name = "usuario_id") //relación entre Incidencia y Usuario
     private Usuario usuario;
-
-    @Column(nullable = false)
     private String accion;
-
-    @Column(nullable = false)
     private LocalDateTime fecha;
 
 }

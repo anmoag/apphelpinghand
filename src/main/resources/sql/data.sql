@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 INSERT INTO usuarios (id_tipo, email, foto, latitud, longitud, pass, fecha_nacimiento, usuario_desde, token, sexo, nombre, apellido1, apellido2, curso, direccion, ciudad, codigo_postal, pais, telefono, logueado)
 VALUES (1, 'usuario1@email.com', 'foto1.jpg', 0.0, 0.0, 'contraseña1', '1990-01-01', NOW(), 'token1', 'Masculino', 'Usuario', 'Uno', NULL, 'Informática', 'Calle Ejemplo 1', 'Ciudad Ejemplo', 12345, 'País Ejemplo', '123456789', 0);
 
@@ -50,3 +51,22 @@ INSERT INTO palabras (palabra) VALUES ('capulla');
 INSERT INTO palabras (palabra) VALUES ('payaso');
 INSERT INTO palabras (palabra) VALUES ('payasa');
 
+=======
+INSERT INTO palabras (palabra) VALUES ('gilipollas'),
+                                      ('imbécil'),
+                                      ('cabrón'),
+                                      ('cabrona'),
+                                      ('Subnormal'),
+                                      ('hijoputa'),
+                                      ('hijaputa'),
+                                      ('hijo de puta'),
+                                      ('hija de puta'),
+                                      ('tonto'),
+                                      ('tonta'),
+                                      ('puta'),
+                                      ('puto'),
+                                      ('capullo'),
+                                      ('capulla'),
+                                      ('payaso'),
+                                      ('payasa');
+>>>>>>> origin/master

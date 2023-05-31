@@ -11,7 +11,7 @@ USE appHelping;
 -- Crear tabla usuarios
 CREATE TABLE usuarios (
                           id BIGINT PRIMARY KEY AUTO_INCREMENT, -- El rango de valores posibles para un BIGINT generalmente
-                          -- va desde -9223372036854775808 hasta 9223372036854775807.
+    -- va desde -9223372036854775808 hasta 9223372036854775807.
                           id_tipo INT NOT NULL,
                           email VARCHAR(255) NOT NULL UNIQUE,
                           foto VARCHAR(255),
@@ -48,22 +48,22 @@ CREATE TABLE mensajes (
 
 -- Crear tabla chat_mensajes
 CREATE TABLE chat_mensajes (
-                           id BIGINT PRIMARY KEY AUTO_INCREMENT,
-                           remitente_id BIGINT NOT NULL,
-                           destinatario_id BIGINT NOT NULL,
-                           contenido VARCHAR(255) NOT NULL,
-                           fecha_envio DATETIME NOT NULL,
-                           FOREIGN KEY (remitente_id) REFERENCES usuarios(id),
-                           FOREIGN KEY (destinatario_id) REFERENCES usuarios(id)
+                               id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                               remitente_id BIGINT NOT NULL,
+                               destinatario_id BIGINT NOT NULL,
+                               contenido VARCHAR(255) NOT NULL,
+                               fecha_envio DATETIME NOT NULL,
+                               FOREIGN KEY (remitente_id) REFERENCES usuarios(id),
+                               FOREIGN KEY (destinatario_id) REFERENCES usuarios(id)
 );
 
 CREATE TABLE puntuaciones (
-                            id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                            usuario_acosado_id BIGINT NOT NULL,
-                            usuario_ayuda_id BIGINT NOT NULL,
-                            puntuacion INT NOT NULL,
-                            FOREIGN KEY (usuario_acosado_id) REFERENCES usuarios (id),
-                            FOREIGN KEY (usuario_ayuda_id) REFERENCES usuarios (id)
+                              id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                              usuario_acosado_id BIGINT NOT NULL,
+                              usuario_ayuda_id BIGINT NOT NULL,
+                              puntuacion INT NOT NULL,
+                              FOREIGN KEY (usuario_acosado_id) REFERENCES usuarios (id),
+                              FOREIGN KEY (usuario_ayuda_id) REFERENCES usuarios (id)
 );
 
 CREATE TABLE incidencias (
@@ -73,17 +73,17 @@ CREATE TABLE incidencias (
                              usuario_id BIGINT,
                              estado VARCHAR(20),
                              prioridad VARCHAR(20),
-                             comentarios TINYTEXT,
+                             comentarios TINYTEXT,-- Algunos han tenido que poner un TINYTEXT
 
                              FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
 CREATE TABLE historial_acciones (
-                            id BIGINT PRIMARY KEY AUTO_INCREMENT,
-                            usuario_id BIGINT NOT NULL,
-                            accion VARCHAR(255) NOT NULL,
-                            fecha DATETIME NOT NULL,
-                            FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+                                    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                                    usuario_id BIGINT NOT NULL,
+                                    accion VARCHAR(255) NOT NULL,
+                                    fecha DATETIME NOT NULL,
+                                    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
 CREATE TABLE palabras (

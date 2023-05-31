@@ -1,4 +1,4 @@
-package com.inserta.apphelpinghand.services;
+package com.inserta.apphelpinghand.service;
 
 import com.inserta.apphelpinghand.models.Usuario;
 

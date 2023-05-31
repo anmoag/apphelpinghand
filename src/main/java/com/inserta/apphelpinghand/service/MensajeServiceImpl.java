@@ -4,7 +4,6 @@ import com.inserta.apphelpinghand.models.Mensaje;
 import com.inserta.apphelpinghand.models.Usuario;
 import com.inserta.apphelpinghand.repos.MensajeRepo;
 import com.inserta.apphelpinghand.repos.UsuarioRepo;
-import com.inserta.apphelpinghand.service.MensajeService;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class MensajeServiceImpl implements MensajeService {
         mensaje.setContenido("Necesito ayuda");
         mensaje.setRemitente(usuarioAcosado);
         mensaje.setFechaEnvio(LocalDateTime.now()); // Dar formato a la fecha y hora
-        usuarioAcosado.setFoto(""); // Aquí la url de la foto del usuario
+        usuarioAcosado.setFoto("foto1"); // Aquí la url de la foto del usuario
         mensaje.setLeido(false);
 
         // Enviar mensaje a usuarios cercanos

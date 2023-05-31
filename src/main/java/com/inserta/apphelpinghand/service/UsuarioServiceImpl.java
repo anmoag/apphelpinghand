@@ -1,14 +1,15 @@
-package com.inserta.apphelpinghand.services;
+package com.inserta.apphelpinghand.service;
 
 import com.inserta.apphelpinghand.models.Usuario;
 import com.inserta.apphelpinghand.repos.UsuarioRepo;
+import com.inserta.apphelpinghand.service.UsuarioService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService{
+public class UsuarioServiceImpl implements UsuarioService {
     private final UsuarioRepo usuarioRepo;
 
     public UsuarioServiceImpl(UsuarioRepo usuarioRepo) {

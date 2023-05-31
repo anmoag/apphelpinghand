@@ -5,6 +5,7 @@ import com.inserta.apphelpinghand.models.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @RepositoryRestResource(path = "usuarios")
 public interface UsuarioRepo extends JpaRepository<Usuario, Long> {
 
-    public List<Usuario> findByEmail(String email);
+    public Usuario findByEmail(String email);
 
     public List<Usuario> findByNombre(String nombre);
 
@@ -20,10 +21,7 @@ public interface UsuarioRepo extends JpaRepository<Usuario, Long> {
 
     public boolean existsByEmailAndPass(String email, String pass);
 
-    public List<Usuario> findByUsuarioDesde(LocalDateTime usuarioDesde);
-
-
-
+    public List<Usuario> findByUsuarioDesdeBefore(LocalDateTime usuarioDesde);
 
 
 }

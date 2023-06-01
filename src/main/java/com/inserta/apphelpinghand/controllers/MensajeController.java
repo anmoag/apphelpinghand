@@ -5,10 +5,7 @@ import com.inserta.apphelpinghand.models.Usuario;
 import com.inserta.apphelpinghand.service.MensajeService;
 import com.inserta.apphelpinghand.service.UsuarioService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/mensajes")
@@ -22,9 +19,8 @@ public class MensajeController {
     }
 
     @PostMapping("/enviar")
-    public Usuario enviarMensajeAcosado(@RequestBody Usuario usuarioAcosado) {
-        Mensaje mensajeEnviado = mensajeService.enviarMensajeAcosado(usuarioAcosado);
-        return null;
+    public Mensaje enviarMensajeAcosado(@RequestBody Usuario usuarioAcosado) {
+        return mensajeService.enviarMensajeAcosado(usuarioAcosado);
     //TODO método en construcción, no usar.
     }
 }

@@ -61,7 +61,6 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepo.existsByEmailAndPass(email, pass);
     }
 
-
     /**
      * Método para obtener una lista de usuarios antes de una fecha
      *
@@ -69,7 +68,7 @@ public class UsuarioServiceImpl implements UsuarioService {
      * @return lista de usuarios antes de la fecha
      */
     @Override
-    public List<Usuario> obtenerUsuarioDesde(LocalDateTime usuarioDesde) {
+    public List<Usuario> obtenerUsuariosDesde(LocalDateTime usuarioDesde) {
         return usuarioRepo.findByUsuarioDesdeBefore(usuarioDesde);
     }
 }

@@ -3,7 +3,7 @@ package com.inserta.apphelpinghand.controllers;
 import com.inserta.apphelpinghand.models.Mensaje;
 import com.inserta.apphelpinghand.models.Usuario;
 import com.inserta.apphelpinghand.service.MensajeService;
-import org.springframework.http.HttpStatus;
+import com.inserta.apphelpinghand.service.UsuarioService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,15 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/mensajes")
 public class MensajeController {
     private final MensajeService mensajeService;
+    private final UsuarioService usuarioService;
 
-    public MensajeController(MensajeService mensajeService) {
+    public MensajeController(MensajeService mensajeService, UsuarioService usuarioService) {
         this.mensajeService = mensajeService;
+        this.usuarioService = usuarioService;
     }
 
     @PostMapping("/enviar")
-    public ResponseEntity<String> enviarMensajeAcosado(@RequestBody Usuario usuarioAcosado) {
+    public Usuario enviarMensajeAcosado(@RequestBody Usuario usuarioAcosado) {
         Mensaje mensajeEnviado = mensajeService.enviarMensajeAcosado(usuarioAcosado);
-        return ResponseEntity.ok("Mensaje enviado correctamente");
-
+        return null;
+    //TODO método en construcción, no usar.
     }
 }

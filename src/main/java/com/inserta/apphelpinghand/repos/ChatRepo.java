@@ -14,5 +14,4 @@ import java.util.List;
 
 public interface ChatRepo extends JpaRepository<Chat, Long> {
     public List<Chat> findAllByFechaEnvio(LocalDateTime fechaHora);
-    public Boolean deleteChatById(int id);
 }

@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/chats")
+@RequestMapping("/chats")
 public class ChatController {
     private final ChatService chatService;
 

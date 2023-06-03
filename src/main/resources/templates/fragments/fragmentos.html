@@ -34,13 +34,10 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown-desplegable" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Desplegable
+                        Json
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown-desplegable">
-                        <li><a target="_blank" class="dropdown-item" href="#">Enlace</a></li>
-                        <li><a target="_blank" class="dropdown-item" href="#">Enlace</a></li>
-                        <li><a target="_blank" class="dropdown-item" href="#">Enlace</a></li>
-                        <li><a target="_blank" class="dropdown-item" href="#">Enlace</a></li>
+                        <li><a target="_blank" class="dropdown-item" href="/api/v1">/api/v1</a></li>
 
                     </ul>
                 </li>
@@ -57,11 +54,11 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto" th:if="${session.usuario != null}">
                 <li class="nav-item drop-start mx-5">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown-usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person"></i>
-                        <span>Tipos de Usuario</span>
+                        <span th:text="${session.usuario.nombre}">Tipos de Usuario</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown-usuario">
                         <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-left"></i>Usuario</a></li>

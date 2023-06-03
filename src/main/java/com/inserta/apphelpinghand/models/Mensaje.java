@@ -18,12 +18,12 @@ public class Mensaje {
     private String contenido;
     @ManyToOne// Establece una relación entre Mensaje y Usuario.
     // Cada mensaje tiene un remitente y un destinatario que son instancias de la clase Usuario.
-    @JoinColumn(name = "remite_id", referencedColumnName = "id") //Especifica la columna en la tabla mensajes que se utiliza
+    @JoinColumn(name = "id_remite", referencedColumnName = "id") //Especifica la columna en la tabla mensajes que se utiliza
     // para almacenar la clave externa del remitente.
     private Usuario remitente;
     @ManyToOne // Establece una relación entre Mensaje y Usuario.
     // Cada mensaje tiene un remitente y un destinatario que son instancias de la clase Usuario.
-    @JoinColumn(name = "destinatario_id", referencedColumnName = "id") //Especifica la columna en la tabla mensajes que se utiliza
+    @JoinColumn(name = "id_destinatario", referencedColumnName = "id") //Especifica la columna en la tabla mensajes que se utiliza
     // para almacenar la clave externa del destinatario.
     private Usuario destinatario;
     private LocalDateTime fechaEnvio;

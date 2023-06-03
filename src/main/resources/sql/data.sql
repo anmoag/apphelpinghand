@@ -6,31 +6,31 @@ VALUES (1, 'usuario1@email.com', 'foto1.jpg', 0.0, 0.0, 'contraseña1', '1990-01
 INSERT INTO usuarios (id_tipo, email, foto, latitud, longitud, pass, fecha_nacimiento, usuario_desde, token, sexo, nombre, apellido1, apellido2, curso, direccion, ciudad, codigo_postal, pais, telefono, logueado)
 VALUES (1, 'usuario2@email.com', 'foto2.jpg', 0.0, 0.0, 'contraseña2', '1990-01-01', NOW(), 'token2', 'Femenino', 'Usuario', 'Dos', NULL, 'Informática', 'Calle Ejemplo 2', 'Ciudad Ejemplo', 54321, 'País Ejemplo', '987654321', 0);
 
-INSERT INTO mensajes (contenido, remite_id, destinatario_id, fecha_envio, leido)
+INSERT INTO mensajes (contenido, id_remite, id_destinatario, fecha_envio, leido)
 VALUES ('Hola, ¿cómo estás?', 1, 2, NOW(), false);
 
-INSERT INTO mensajes (contenido, remite_id, destinatario_id, fecha_envio, leido)
+INSERT INTO mensajes (contenido, id_remite, id_destinatario, fecha_envio, leido)
 VALUES ('Hola, estoy bien. ¿Y tú?', 2, 1, NOW(), false);
 
-INSERT INTO chat_mensajes (remitente_id, destinatario_id, contenido, fecha_envio)
+INSERT INTO chat_mensajes (id_remitente, id_destinatario, contenido, fecha_envio)
 VALUES (1, 2, 'Hola, ¿cómo estás en el chat?', NOW());
 
-INSERT INTO chat_mensajes (remitente_id, destinatario_id, contenido, fecha_envio)
+INSERT INTO chat_mensajes (id_remitente, id_destinatario, contenido, fecha_envio)
 VALUES (2, 1, '¡Hola! Estoy bien, gracias.', NOW());
 
-INSERT INTO puntuaciones (usuario_acosado_id, usuario_ayuda_id, puntuacion)
+INSERT INTO puntuaciones (id_usuario_acosado, id_destinatario_ayuda, puntuacion)
 VALUES (1, 2, 5);
 
-INSERT INTO puntuaciones (usuario_acosado_id, usuario_ayuda_id, puntuacion)
+INSERT INTO puntuaciones (id_usuario_acosado, id_destinatario_ayuda, puntuacion)
 VALUES (2, 1, 4);
 
-INSERT INTO incidencias (descripcion, fecha_hora, usuario_id, estado, prioridad, comentarios)
+INSERT INTO incidencias (descripcion, fecha_hora, id_usuario, estado, prioridad, comentarios)
 VALUES ('Problema técnico', NOW(), 1, 'En proceso', 'Alta', 'Comentario sobre la incidencia');
 
-INSERT INTO incidencias (descripcion, fecha_hora, usuario_id, estado, prioridad, comentarios)
+INSERT INTO incidencias (descripcion, fecha_hora, id_usuario, estado, prioridad, comentarios)
 VALUES ('Error en el sistema', NOW(), 2,'En proceso','Alta','Comentario sobre la incidencia');
 
-INSERT INTO incidencias (descripcion, fecha_hora, usuario_id, estado, prioridad, comentarios)
+INSERT INTO incidencias (descripcion, fecha_hora, id_usuario, estado, prioridad, comentarios)
 VALUES ('Error en el sistema', NOW(), 2, 'En proceso', 'Media', 'Comentario sobre el error');
 
 INSERT INTO palabras (palabra) VALUES ('gilipollas');

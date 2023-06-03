@@ -14,11 +14,11 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "remitente_id") //Especifica la columna en la tabla mensajes que se utiliza
+    @JoinColumn(name = "id_remitente", referencedColumnName = "id") //Especifica la columna en la tabla mensajes que se utiliza
     // para almacenar la clave externa del remitente.
     private Usuario remitente;
     @ManyToOne
-    @JoinColumn(name = "destinatario_id") //Especifica la columna en la tabla mensajes que se utiliza
+    @JoinColumn(name = "id_destinatario", referencedColumnName = "id") //Especifica la columna en la tabla mensajes que se utiliza
     // para almacenar la clave externa del destinatario.
     private Usuario destinatario;
     private String contenido;

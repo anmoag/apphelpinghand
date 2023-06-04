@@ -32,7 +32,7 @@ CREATE TABLE usuarios (
                           pais VARCHAR(255) NOT NULL,
                           telefono VARCHAR(255),
                           logueado BOOLEAN
-);
+)ENGINE=InnoDB;
 
 -- Crear tabla mensajes
 CREATE TABLE mensajes (
@@ -44,7 +44,7 @@ CREATE TABLE mensajes (
                           leido BOOLEAN,
                           FOREIGN KEY (id_remite) REFERENCES usuarios(id),
                           FOREIGN KEY (id_destinatario) REFERENCES usuarios(id)
-);
+)ENGINE=InnoDB;
 
 -- Crear tabla chat_mensajes
 CREATE TABLE chat_mensajes (
@@ -55,7 +55,7 @@ CREATE TABLE chat_mensajes (
                                fecha_envio DATETIME NOT NULL,
                                FOREIGN KEY (id_remitente) REFERENCES usuarios(id),
                                FOREIGN KEY (id_destinatario) REFERENCES usuarios(id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE puntuaciones (
                               id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -64,7 +64,7 @@ CREATE TABLE puntuaciones (
                               puntuacion INT NOT NULL,
                               FOREIGN KEY (id_usuario_acosado) REFERENCES usuarios (id),
                               FOREIGN KEY (id_destinatario_ayuda) REFERENCES usuarios (id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE incidencias (
                              id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -76,7 +76,7 @@ CREATE TABLE incidencias (
                              comentarios TINYTEXT,-- Algunos han tenido que poner un TINYTEXT
 
                              FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE historial_acciones (
                                     id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -84,9 +84,9 @@ CREATE TABLE historial_acciones (
                                     accion VARCHAR(255) NOT NULL,
                                     fecha DATETIME NOT NULL,
                                     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE palabras (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           palabra VARCHAR(255)
-);
+)ENGINE=InnoDB;

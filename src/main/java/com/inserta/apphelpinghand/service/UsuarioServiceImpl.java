@@ -72,5 +72,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepo.findByUsuarioDesdeBefore(usuarioDesde);
     }
 
+    @Override
+    public Usuario obtenerUsuarioPorId(long id) {
+        return usuarioRepo.findById(id).orElse(null);
+    }
+
 
 }

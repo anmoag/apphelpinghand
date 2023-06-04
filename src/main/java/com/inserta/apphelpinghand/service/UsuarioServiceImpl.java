@@ -71,4 +71,6 @@ public class UsuarioServiceImpl implements UsuarioService {
     public List<Usuario> obtenerUsuariosDesde(LocalDateTime usuarioDesde) {
         return usuarioRepo.findByUsuarioDesdeBefore(usuarioDesde);
     }
+
+
 }

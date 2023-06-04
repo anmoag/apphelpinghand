@@ -5,5 +5,5 @@
 
 [Documentación postman usuarios e incidencias](https://documenter.getpostman.com/view/27420221/2s93sW7Ekf)
 
-[Documentación postman mensajes](https://documenter.getpostman.com/view/27420125/2s93sW8aqA)
+[Documentación postman mensajes e historial de acciones](https://documenter.getpostman.com/view/27420125/2s93sW8aqA)
 

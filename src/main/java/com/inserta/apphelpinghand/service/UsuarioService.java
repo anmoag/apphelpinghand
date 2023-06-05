@@ -15,4 +15,5 @@ public interface UsuarioService {
     public boolean existeEmailYClave(String email, String pass);
 
     List<Usuario> obtenerUsuariosDesde(LocalDateTime usuarioDesde);
+    Usuario obtenerUsuarioPorId(long id);
 }

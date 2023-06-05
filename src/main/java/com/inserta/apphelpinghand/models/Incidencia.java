@@ -17,8 +17,8 @@ public class Incidencia {
     private long id;
     private String descripcion;
     private LocalDateTime fechaHora;
-    @ManyToOne(fetch = FetchType.LAZY) //relación de muchos a uno
-    @JoinColumn(name = "usuario_id") //relación entre Incidencia y Usuario
+    @ManyToOne//relación de muchos a uno
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id") //relación entre Incidencia y Usuario
     private Usuario usuario;
     private String estado;
     private String prioridad;

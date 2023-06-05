@@ -7,10 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/usuarios")
@@ -52,7 +49,12 @@ public class UsuarioController {
         } else {
             // Credenciales incorrectas
             model.addAttribute("error", "Usuario y/o contraseña incorrectas");
-            return "/login";
+            return "/vistas/login";
         }
+    }
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "vistas/login";
     }
 }

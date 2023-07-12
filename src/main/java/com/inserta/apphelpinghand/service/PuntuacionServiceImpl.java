@@ -1,6 +1,7 @@
 package com.inserta.apphelpinghand.service;
 
 import com.inserta.apphelpinghand.models.Puntuacion;
+import com.inserta.apphelpinghand.models.Usuario;
 import com.inserta.apphelpinghand.repos.PuntuacionRepo;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,16 @@ public class PuntuacionServiceImpl implements PuntuacionService{
             // Guardar la puntuación existente actualizada en la base de datos
             puntuacionRepo.save(puntuacionExistente);
         }
+    }
+
+    public void agregarPuntos(Usuario usuarioAcosado, Usuario usuarioAyuda, Integer puntos) {
+        Puntuacion puntuacion = puntuacionRepo.findByUsuarioAcosadoAndUsuarioAyuda(usuarioAcosado, usuarioAyuda);
+        if (puntuacion == null) {
+            puntuacion = new Puntuacion();
+            puntuacion.setUsuarioAcosado(usuarioAcosado);
+            puntuacion.setUsuarioAyuda(usuarioAyuda);
+        }
+        puntuacion.setPuntuacion(puntuacion.getPuntuacion() + puntos);
+        puntuacionRepo.save(puntuacion);
     }
 }

@@ -15,6 +15,8 @@ import java.util.List;
 @RepositoryRestResource(path = "usuarios")
 public interface UsuarioRepo extends JpaRepository<Usuario, Long> {
 
+    public Usuario findById(long id);
+
     public Usuario findByEmail(String email);
 
     public List<Usuario> findByNombre(String nombre);

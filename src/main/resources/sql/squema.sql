@@ -31,7 +31,8 @@ CREATE TABLE usuarios (
                           codigo_postal INT NOT NULL,
                           pais VARCHAR(255) NOT NULL,
                           telefono VARCHAR(255),
-                          logueado BOOLEAN
+                          logueado BOOLEAN,
+                          puntuacion INT NOT NULL
 )ENGINE=InnoDB;
 
 -- Crear tabla mensajes

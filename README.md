@@ -7,3 +7,5 @@
 
 [Documentación postman mensajes e historial de acciones](https://documenter.getpostman.com/view/27420125/2s93sW8aqA)
 
+[Documentación postman mensajes e historial de acciones](https://documenter.getpostman.com/view/27599659/2s93sXbu9h)
+

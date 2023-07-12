@@ -77,5 +77,15 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepo.findById(id);
     }
 
+    @Override
+    public List<Usuario> obtenerTodosLosUsuarios() {
+        return usuarioRepo.findAll();
+    }
+
+    @Override
+    public void guardarUsuario(Usuario usuario) {
+        usuarioRepo.save(usuario);
+    }
+
 
 }

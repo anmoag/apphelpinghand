@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.time.LocalDateTime;
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200")
+
 @Repository
 @CrossOrigin(origins = "http://localhost:4200")
 @RepositoryRestResource(path = "usuarios")

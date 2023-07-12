@@ -37,14 +37,5 @@ public class PuntuacionServiceImpl implements PuntuacionService{
         }
     }
 
-    public void agregarPuntos(Usuario usuarioAcosado, Usuario usuarioAyuda, Integer puntos) {
-        Puntuacion puntuacion = puntuacionRepo.findByUsuarioAcosadoAndUsuarioAyuda(usuarioAcosado, usuarioAyuda);
-        if (puntuacion == null) {
-            puntuacion = new Puntuacion();
-            puntuacion.setUsuarioAcosado(usuarioAcosado);
-            puntuacion.setUsuarioAyuda(usuarioAyuda);
-        }
-        puntuacion.setPuntuacion(puntuacion.getPuntuacion() + puntos);
-        puntuacionRepo.save(puntuacion);
-    }
+
 }

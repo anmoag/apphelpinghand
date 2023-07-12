@@ -37,10 +37,7 @@ public class Usuario {
     private String pais;
     private String telefono;
     private boolean logueado;
-    @ManyToOne// Establece una relación entre Mensaje y Usuario.
-    // Cada mensaje tiene un remitente y un destinatario que son instancias de la clase Usuario.
-    @JoinColumn(name = "puntuacion", referencedColumnName = "id")
-    private Puntuacion puntuacion;
+    private int puntuacion;
 
 
 

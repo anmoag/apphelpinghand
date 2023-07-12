@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/usuarios")
 public class UsuarioController {
@@ -34,7 +36,7 @@ public class UsuarioController {
             // Usuario autenticado correctamente, iniciar sesión
             session.setAttribute("usuario", usuario);
 
-            // Si se seleccionó "Mantener mi sesión", establecer un tiempo de sesión más largo
+            // Sí se seleccionó "Mantener mi sesión", establecer un tiempo de sesión más largo
             if (mantener) {
                 // Para que este siempre la sesion activa
                 int maxAge = (7 * 24 * 60 * 60); // 7 días en segundos
@@ -56,5 +58,25 @@ public class UsuarioController {
     public String logout(HttpSession session) {
         session.invalidate();
         return "vistas/login";
+    }
+
+    @GetMapping("/todos")
+    @ResponseBody
+    public List<Usuario> obtenerTodos(){
+        return usuarioService.obtenerTodosLosUsuarios();
+    }
+
+    @PostMapping("/agregarPuntos/{idUsuarioAyuda}/{puntos}")
+    public void agregarPuntos( @PathVariable Long idUsuarioAyuda, @PathVariable int puntos) {
+        System.out.println("Ayuda" + idUsuarioAyuda);
+        System.out.println("puntos" + puntos);
+        Usuario usuarioAyuda = usuarioService.obtenerUsuarioPorId(idUsuarioAyuda);
+        System.out.println("usuario que ayuda " +usuarioAyuda);
+        int puntuacionActual = usuarioAyuda.getPuntuacion();
+        System.out.println("Puntuacion Actual" + puntuacionActual);
+        int puntuacionFinal = puntuacionActual + puntos;
+        System.out.println("Puntuacion final" + puntuacionFinal);
+        usuarioAyuda.setPuntuacion(puntuacionFinal);
+        usuarioService.guardarUsuario(usuarioAyuda);
     }
 }

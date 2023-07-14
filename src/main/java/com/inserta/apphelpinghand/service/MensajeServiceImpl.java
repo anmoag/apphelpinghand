@@ -50,8 +50,6 @@ public class MensajeServiceImpl implements MensajeService {
      */
     public List<Usuario> obtenerUsuariosCercanos(Usuario usuarioAcosado, double distancia) {
         List<Usuario> todosLosUsuarios = usuarioRepo.findAll();
-        System.out.println("todos los usuarios");
-        System.out.println("//////////" + todosLosUsuarios);
         List<Usuario>usuariosCercanos = new ArrayList<>();
 
         for (Usuario usuarioCercano : todosLosUsuarios) {
@@ -60,7 +58,7 @@ public class MensajeServiceImpl implements MensajeService {
                 double distanciaEntreUsuarios = calcularDistancia(usuarioAcosado, usuarioCercano);
                 if (distanciaEntreUsuarios <= distancia) {
                     usuariosCercanos.add(usuarioCercano);
-                    System.out.println("----------" + usuarioCercano);
+
                 }
             }
         }
@@ -86,14 +84,15 @@ public class MensajeServiceImpl implements MensajeService {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         // Paso la distancia a metros
         double distanciaEnMetros = RADIO_DE_LA_TIERRA * c * 1000;
-
         // Redondear la distancia al entero más cercano
-        long distanciaRedondeada = Math.round(distanciaEnMetros);
-
-        System.out.println("distancia " + usuarioCercano.getId());
-        System.out.println(distanciaRedondeada);
-        return distanciaRedondeada;
+        return Math.round(distanciaEnMetros);
     }
+
+    public double getRangoDeInfluencia() {
+        return RANGO_DE_INFLUENCIA;
+    }
+
+
 
 }
 

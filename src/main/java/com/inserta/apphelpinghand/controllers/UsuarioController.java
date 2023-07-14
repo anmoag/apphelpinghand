@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -66,8 +67,9 @@ public class UsuarioController {
         return usuarioService.obtenerTodosLosUsuarios();
     }
 
+    @ResponseBody
     @PostMapping("/agregarPuntos/{idUsuarioAyuda}/{puntos}")
-    public void agregarPuntos( @PathVariable Long idUsuarioAyuda, @PathVariable int puntos) {
+    public Usuario agregarPuntos( @PathVariable Long idUsuarioAyuda, @PathVariable int puntos) {
         System.out.println("Ayuda" + idUsuarioAyuda);
         System.out.println("puntos" + puntos);
         Usuario usuarioAyuda = usuarioService.obtenerUsuarioPorId(idUsuarioAyuda);
@@ -78,5 +80,8 @@ public class UsuarioController {
         System.out.println("Puntuacion final" + puntuacionFinal);
         usuarioAyuda.setPuntuacion(puntuacionFinal);
         usuarioService.guardarUsuario(usuarioAyuda);
+        return usuarioAyuda;
     }
+
+
 }

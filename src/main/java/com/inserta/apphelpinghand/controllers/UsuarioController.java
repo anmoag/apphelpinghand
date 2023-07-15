@@ -70,14 +70,9 @@ public class UsuarioController {
     @ResponseBody
     @PostMapping("/agregarPuntos/{idUsuarioAyuda}/{puntos}")
     public Usuario agregarPuntos( @PathVariable Long idUsuarioAyuda, @PathVariable int puntos) {
-        System.out.println("Ayuda" + idUsuarioAyuda);
-        System.out.println("puntos" + puntos);
         Usuario usuarioAyuda = usuarioService.obtenerUsuarioPorId(idUsuarioAyuda);
-        System.out.println("usuario que ayuda " +usuarioAyuda);
         int puntuacionActual = usuarioAyuda.getPuntuacion();
-        System.out.println("Puntuacion Actual" + puntuacionActual);
         int puntuacionFinal = puntuacionActual + puntos;
-        System.out.println("Puntuacion final" + puntuacionFinal);
         usuarioAyuda.setPuntuacion(puntuacionFinal);
         usuarioService.guardarUsuario(usuarioAyuda);
         return usuarioAyuda;
